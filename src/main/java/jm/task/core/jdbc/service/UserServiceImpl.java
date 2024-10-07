@@ -31,7 +31,11 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<User> getAllUsers() {
+        List<User> users =  userDao.getAllUsers();
         System.out.printf("%-3s\t%-10s\t%-10s\t%-3s%n", "id", "name", "lastName", "age");
+        for (User user : users) {
+            System.out.println(user);
+        }
         return userDao.getAllUsers();
     }
 
